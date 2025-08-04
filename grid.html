@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Document</title>
+    <style>
+        .faqs{
+    height: 650px;
+        }
+        .title{
+            color:  #777;
+            width: 25%;
+            margin-top: 12%;
+            margin-left: 4%;
+            float: left;
+        }
+        .accordDiv{
+            margin-top: 8%;
+            float: left;
+            max-width: 850px;
+            height: 400px;
+        }
+        .accordDiv .questionDiv{
+            position: relative;
+            cursor: pointer;
+            padding: 4px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            border-top:2px solid #E8E8E8; ;
+            border-bottom: 2px solid #E8E8E8;
+        }
+        .question{
+            position: relative;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .question::before{
+            content:'+';
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform:translateY(-50%);
+            font-size: 1.6em;
+        }
+        .questionDiv.active .question::before{
+            content: '-';
+        }
+        .answer{
+        color: #666;
+        overflow: hidden;
+        transition: 0.5s;
+        position: relative;
+        height: 0;
+        } 
+        .questionDiv.active .answer{
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .questionDiv.active .accordDiv{
+            height: 800px;
+        }
+        .questionDiv.active .faqs{
+            height: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="faqs">
+        <div class="title">
+            <h2 style="font-size: 50px;">FAQ'S</h2>
+        </div>
+        <div class="accordDiv">
+            <div class="questionDiv">
+                <div class="question">
+                    <h4>What types of IT training courses does Quickyes Infotech offer?</h4>
+                </div>
+                <div class="answer active">
+                    <p>Quickyes Infotech offers a wide range of IT training courses, including software development, data science, cloud computing, cybersecurity, web development, and more. Our courses are designed to meet industry standards and equip students with the skills needed to excel in the IT field.</p>
+                </div>
+            </div>
+            <div class="questionDiv">
+                <div class="question">
+                    <h4>Is there a placement guarantee after completing a course at Quickyes Infotech?</h4>
+                </div>
+                <div class="answer active">
+                    <p>Yes, Quickyes Infotech provides a 100% placement guarantee for all our IT training courses. We work closely with industry partners and employers to ensure that our students secure jobs that match their skills and aspirations.</p>
+                </div>
+            </div>
+            <div class="questionDiv">
+                <div class="question">
+                    <h4>Who can enroll in Quickyes Infotech's courses?</h4>
+                </div>
+                <div class="answer active">
+                    <p>Our courses are open to anyone with a passion for IT, from beginners looking to start a career in technology to professionals seeking to upskill or change career paths. We offer tailored training programs to suit various skill levels and backgrounds.</p>
+                </div>
+            </div>
+            <div class="questionDiv">
+                <div class="question">
+                    <h4>What makes Quickyes Infotech's training programs stand out?</h4>
+                </div>
+                <div class="answer active">
+                    <p>Quickyes Infotech’s training programs are distinguished by our focus on real-world applications, expert instructors, hands-on projects, and our commitment to job placement. We combine theoretical knowledge with practical experience to ensure our students are job-ready from day one.</p>
+                </div>
+            </div>
+            <div class="questionDiv">
+                <div class="question">
+                    <h4>How can I apply for a course at Quickyes Infotech?</h4>
+                </div>
+                <div class="answer active">
+                    <p>You can apply for our courses by visiting our website and filling out the online application form. Alternatively, you can contact our admissions team directly for personalized assistance in choosing the right course for you.</p>
+                </div>
+            </div>        
+        </div>
+    </div> 
+    <script>
+        const accordions = document.getElementsByClassName('questionDiv');
+        for(i=0;i<accordions.length;i++){
+            accordions[i].addEventListener('click',function(){
+                this.classList.toggle('active')
+            })
+        }
+    </script>  
+</body>
+</html>
